@@ -1,0 +1,6 @@
+soc-redditHyperlinks-body.tsv
+soc-redditHyperlinks-title.tsv
+
+.venv/
+.artifacts/
+reddit_analysis_output/
