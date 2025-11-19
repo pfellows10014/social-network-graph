@@ -1,0 +1,31 @@
+# Analysis Report: Reddit Social Network Graph
+
+This report summarizes the findings from the analysis of the Reddit hyperlink dataset. The results from the PySpark and GraphFrames analysis appear to be consistent with expected behaviors on a social network platform like Reddit.
+
+## Summary of Insights
+
+### 1. Top 5 Subreddits by In-Degree (Most Linked-To)
+- **Subreddits:** `askreddit`, `iama`, `pics`, `todayilearned`, `funny`
+- **Insight:** The most linked-to subreddits are the largest and most popular default communities on Reddit. This is logical, as their broad appeal and high visibility lead to them being frequently cited and linked from a wide variety of other subreddits.
+
+### 2. Top 5 Subreddits by Out-Degree (Most Active Linkers)
+- **Subreddits:** `subredditdrama`, `bestof`, `titlegore`, `shitredditsays`, `drama`
+- **Insight:** The subreddits that link out the most are "meta" or commentary-based communities. Their primary function is to discuss, highlight, or critique content from other parts of Reddit, which naturally results in a high volume of outgoing links. This result makes perfect sense.
+
+### 3. Top 5 Subreddits by PageRank (Most Influential)
+- **Subreddits:** `askreddit`, `iama`, `pics`, `funny`, `videos`
+- **Insight:** The most influential subreddits, according to PageRank, are nearly identical to those with the highest in-degree. This is expected, as PageRank is heavily influenced by the number and quality of incoming links. It confirms that the most popular subreddits are also the most central and authoritative nodes in the network.
+
+### 4. Top 5 Largest Connected Components
+- **Insight:** The analysis revealed one giant connected component containing over 65,000 subreddits, with all other components being trivially small (fewer than 10 members). This is a classic characteristic of a "small-world" network, indicating that the vast majority of subreddits are interconnected in a single, sprawling network.
+
+### 5. Top 5 Subreddits by Triangle Count
+- **Subreddits:** `askreddit`, `subredditdrama`, `bestof`, `iama`, `funny`
+- **Insight:** The subreddits with the most "triangles" (where A links to B, B links to C, and C links to A) are a mix of the most popular and the most active "meta" subreddits. A high triangle count suggests a subreddit is part of a tightly-knit community where information flows cyclically. It is logical that both highly popular and highly active linking subreddits would be central to many of these three-node clusters.
+
+## Overall Conclusion
+
+The analysis successfully identified key structural features of the Reddit hyperlink network. The results are plausible and align with a general understanding of how Reddit functions:
+- A core of highly popular, general-interest subreddits serve as major hubs.
+- A secondary set of "meta" subreddits act as key information distributors.
+- The network is highly interconnected, forming a single massive social graph.
